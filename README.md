@@ -19,7 +19,7 @@ Table of Contents
 * [Usage](#-usage)
   * [On the create page](#on-the-create-page)
   * [On the edit page](#on-the-edit-page)
-* [Functions](#-functions)
+* [Functions](#functions)
   * [isFakeFilling](#isFakeFilling)
 * [Support the development](#-support-the-development)
 * [Credits](#%EF%B8%8F-credits)
