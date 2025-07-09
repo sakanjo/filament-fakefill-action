@@ -15,9 +15,10 @@ class FilamentFakeFillActionServiceProvider extends PackageServiceProvider
         $package
             ->name(static::$name)
             ->hasConfigFile()
-            ->hasInstallCommand(fn (InstallCommand $command) => $command
-                ->publishConfigFile()
-                ->askToStarRepoOnGitHub('sakanjo/filament-fakefill-action')
+            ->hasInstallCommand(
+                fn (InstallCommand $command) => $command
+                    ->publishConfigFile()
+                    ->askToStarRepoOnGitHub('sakanjo/filament-fakefill-action')
             );
     }
 

@@ -2,6 +2,7 @@
 
 namespace SaKanjo\FilamentFakeFillAction\Actions;
 
+use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Forms;
 use Filament\Resources\Pages;
@@ -62,9 +63,15 @@ class FakeFillAction extends Action
             }
         }
 
-        $data = Arr::mapWithKeys($data, fn (mixed $value, string $key) => [
-            "data.$key" => $value,
-        ]);
+        $data = Arr::mapWithKeys($data, function (mixed $value, string $key): array {
+            if ($value instanceof BackedEnum) {
+                $value = $value->value;
+            }
+
+            return [
+                "data.$key" => $value,
+            ];
+        });
 
         $livewire->fill($data);
 
