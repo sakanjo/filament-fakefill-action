@@ -45,7 +45,7 @@ class FakeFillAction extends Action
         App::bind('fakeFilling', fn () => true);
 
         /** @var Factory $factory */
-        $factory = $livewire->getModel()::factory();
+        $factory = $livewire->getModel()::factory(); // @phpstan-ignore-line
         $data = $factory->definition();
 
         $components = $livewire->form->getComponents();
